@@ -63,13 +63,13 @@
       }
       }
 
-      #cf3 {
+      .img_div {
         position: relative;
         height: 281px;
         width: 450px;
         margin: 0 auto;
       }
-      #cf3 img {
+      .img_div img {
         position: absolute;
         left: 0;
       }
@@ -97,11 +97,36 @@
         animation-direction: alternate;
       }
     </style>
+    <script>
+      function shakeleft() {
+        document.getElementById('to_shake').style.position = "relative";
+        document.getElementById('to_shake').style.left = "5px";
+        timer = setTimeout("shakeright()", 10);
+      }
+
+      function shakeright() {
+        document.getElementById('to_shake').style.left = "0";
+        timer = setTimeout("shakeleft()", 10);
+      }
+
+      function stoptimer() {
+        clearTimeout(timer);
+      }
+    </script>
   </head>
   <body>
-    <div id="cf3">
-      <img class="bottom" src="images/Cirques.jpg" />
-      <img class="top" src="images/ClownFish.jpg" />
-    </div>
+    <p>
+      <div id="cf3" class='img_div'>
+        <h3>Fade-in/out</h3>
+        <img class="top" src="images/ClownFish.jpg" />
+      </div>
+    </p>
+    <br />
+    <p>
+      <div id="cf4" class='img_div'>
+        <h3>Hover the image to shake.</h3>
+        <img id='to_shake' class="top" src="images/ClownFish.jpg" onmouseover="shakeleft()" onmouseout="stoptimer()" />
+      </div>
+    </p>
   </body>
 </html>
