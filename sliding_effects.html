@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	<title>scroll test</title>
+	<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700|Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="styles.css">
+	<style>
+	  p#slide_controls {
+	    text-align:center;
+	  }
+	  #slide_controls span {
+	    padding-right:2em;
+	    cursor:pointer;
+	  }
+	  #slideX_container {
+	    width:450px;
+	    height:281px;
+	    overflow:hidden;
+	    margin:0 auto;
+	  }
+	  #slideX_images {
+	    width:900px;
+	    -webkit-transition:all 1.0s ease-in-out;
+	    -moz-transition:all 1.0s ease-in-out;
+	    -o-transition:all 1.0s ease-in-out;
+	    transition:all 1.0s ease-in-out;
+	  }
+	  #slideX_images img {
+	    padding:0;
+	    margin:0;
+	    float:left;
+	  }
+	  
+		/* slide vertical */
+	  #slideY_container {
+	    width:450px;
+	    height:281px;
+	    overflow:hidden;
+	    margin:0 auto;
+	  }
+	  #slideY_images {
+	    width:900px;
+	    -webkit-transition:all 1.0s ease-in-out;
+	    -moz-transition:all 1.0s ease-in-out;
+	    -o-transition:all 1.0s ease-in-out;
+	    transition:all 1.0s ease-in-out;
+	  }
+	  #slideY_images img {
+	    padding:0;
+	    margin:0;
+	    float:left;
+	  }
+	</style>
+	<script>
+	  $(document).ready(function() {
+          $('#slide_controls').on('click', 'span', function(){
+		      $("#slideX_images").css("transform","translateX("+$(this).index() * -450+"px)");
+		      $("#slideY_images").css("transform","translateY("+$(this).index() * -281+"px)");
+		      // $("#slideXY_images").css("transform","translate(-450px,-281px)"); -- XY
+		      $("#slide_controls span").removeClass("selected");
+		      $(this).addClass("selected");
+	   	  });
+	  });
+  
+	</script>
+</head>
+<body>
+
+<p id="slide_controls"><span class="selected">원위치</span><span>움직인닿?</span></p>
+
+<div id="slideX_container" class="shadow">
+   <div id="slideX_images">
+    <img src="./images/Summit.jpg" />
+  </div>
+</div>
+<br/>
+<div id="slideY_container" class="shadow">
+  <div id="slideY_images">
+    <img src="./images/Summit.jpg" />
+  </div>	
+</div>
+</body>
+</html>
