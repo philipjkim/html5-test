@@ -2,131 +2,21 @@
 <html>
   <head>
     <title>Image Effects</title>
-    <style type="text/css">
-      @-webkit-keyframes cf3FadeInOut {
-      0% {
-      opacity:1;
-      }
-      25% {
-      opacity:1;
-      }
-      75% {
-      opacity:0;
-      }
-      100% {
-      opacity:0;
-      }
-      }
-
-      @-moz-keyframes cf3FadeInOut {
-      0% {
-      opacity:1;
-      }
-      25% {
-      opacity:1;
-      }
-      75% {
-      opacity:0;
-      }
-      100% {
-      opacity:0;
-      }
-      }
-
-      @-o-keyframes cf3FadeInOut {
-      0% {
-      opacity:1;
-      }
-      25% {
-      opacity:1;
-      }
-      75% {
-      opacity:0;
-      }
-      100% {
-      opacity:0;
-      }
-      }
-
-      @keyframes cf3FadeInOut {
-      0% {
-      opacity:1;
-      }
-      25% {
-      opacity:1;
-      }
-      75% {
-      opacity:0;
-      }
-      100% {
-      opacity:0;
-      }
-      }
-
-      .img_div {
-        position: relative;
-        height: 281px;
-        width: 450px;
-        margin: 0 auto;
-      }
-      .img_div img {
-        position: absolute;
-        left: 0;
-      }
-
-      #cf3 img.top {
-        -webkit-animation-name: cf3FadeInOut;
-        -webkit-animation-timing-function: ease-in-out;
-        -webkit-animation-iteration-count: infinite;
-        -webkit-animation-duration: 5s;
-        -webkit-animation-direction: alternate;
-        -moz-animation-name: cf3FadeInOut;
-        -moz-animation-timing-function: ease-in-out;
-        -moz-animation-iteration-count: infinite;
-        -moz-animation-duration: 5s;
-        -moz-animation-direction: alternate;
-        -o-animation-name: cf3FadeInOut;
-        -o-animation-timing-function: ease-in-out;
-        -o-animation-iteration-count: infinite;
-        -o-animation-duration: 5s;
-        -o-animation-direction: alternate;
-        animation-name: cf3FadeInOut;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-        animation-duration: 5s;
-        animation-direction: alternate;
-      }
-    </style>
-    <script>
-      function shakeleft() {
-        document.getElementById('to_shake').style.position = "relative";
-        document.getElementById('to_shake').style.left = "5px";
-        timer = setTimeout("shakeright()", 10);
-      }
-
-      function shakeright() {
-        document.getElementById('to_shake').style.left = "0";
-        timer = setTimeout("shakeleft()", 10);
-      }
-
-      function stoptimer() {
-        clearTimeout(timer);
-      }
-    </script>
+    <link rel="stylesheet" type="text/css" href="css/effects.css">
+    <script src='js/effects.js'></script>
   </head>
   <body>
-  <!-- comment -->
     <p>
-      <div id="cf3" class='img_div'>
+      <div id="fadeinout" class='img_div'>
         <h3>Fade-in/out</h3>
         <img class="top" src="images/ClownFish.jpg" />
       </div>
     </p>
     <br />
     <p>
-      <div id="cf4" class='img_div'>
+      <div id="shake" class='img_div'>
         <h3>Hover the image to shake.</h3>
-        <img id='to_shake' class="top" src="images/ClownFish.jpg" onmouseover="shakeleft()" onmouseout="stoptimer()" />
+        <img id='to_shake' class="top" src="images/ClownFish.jpg" onmouseover='shakeleft("to_shake")' onmouseout="stoptimer()" />
       </div>
     </p>
   </body>
