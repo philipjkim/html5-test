@@ -94,3 +94,17 @@ opacity:0;
   animation-direction: alternate;
 }
 
+/* rotation */
+
+#to_rotate {
+  /*position*/
+ /*
+  position: fixed;
+  top: 30px;
+  right: 5px;
+  */
+  /*rotation*/
+  transform: rotate(-15deg);
+  -ms-transform: rotate(-15deg); /* IE 9 */
+  -webkit-transform: rotate(-15deg); /* Safari and Chrome */
+}

@@ -11,7 +11,7 @@
     <p>
       <div id="fadeinout" class='img_div'>
         <h3>Fade-in/out</h3>
-        <img class="top" src="images/ClownFish.jpg" />
+        <img id='to_fade' class="top" src="images/ClownFish.jpg" />
       </div>
     </p>
     <br />
@@ -19,6 +19,13 @@
       <div id="shake" class='img_div'>
         <h3>Hover the image to shake.</h3>
         <img id='to_shake' class="top" src="images/ClownFish.jpg" onmouseover='shakeleft("to_shake")' onmouseout="stoptimer()" />
+      </div>
+    </p>
+    <br />
+    <p>
+      <div id='rotation' class='img_div'>
+        <h3>top 30px right 5px 위치에 -15도 돌린 이미지임니다.</h3>
+        <img id='to_rotate' src='images/ClownFish.jpg' />
       </div>
     </p>
   </body>
